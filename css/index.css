@@ -1,0 +1,311 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #edeffb;
+}
+
+/* ---------------- HEADER ---------------- */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e1ebff;
+    padding: 0 30px;
+    border-bottom: 2px solid rgb(142, 168, 203);
+    z-index: 999;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.logo img{
+    height: 70px;
+}
+
+.nombre-empresa{
+    font-size: clamp(16px, 2vw, 32px);
+    color: #5b75dd;
+    white-space: nowrap;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-menu .link{
+    padding: clamp(8px, 1vw, 14px) clamp(12px, 2vw, 35px);
+    background-color: #a8b0ff;
+    border-radius: 15px;
+    text-decoration: none;
+    color: black;
+    font-size: clamp(13px, 1.2vw, 16px);
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+.nav-menu .link:hover {
+    background-color: #7b87e8;
+    color: white;
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+    background-image: url('../imatges/gala.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 90px;
+    height: 550px;
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    color: #aeb8ea;
+    font-size: 45px;
+    margin-left: 200px;
+}
+
+.s25{
+    color: #697199;
+    margin-left: 160px;
+    font-size: 45px;
+    background-color: #D9D7FF;
+    border-radius: 40px;
+    padding: 10px 40px;
+    font-weight: 500;
+    display: inline-block;
+    transition: .3s;
+}
+
+.s25:hover{
+    transform: scale(1.08) translateY(-5px);
+}
+
+/* ---------------- GAMAS ---------------- */
+.gama-titulo,
+.gama-titulo2{
+    text-align: center;
+    font-size: 35px;
+    color: #987dea;
+}
+
+.gama-titulo2{ margin-top: 120px; }
+
+.s{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 50px;
+    gap: 20px;
+    
+}
+
+.s a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 60px;
+    font-size: 35px;
+    color: #697199;
+    border-radius: 70px;
+    border: 3px solid;
+    text-decoration: none;
+}
+
+.s20{ background:#ecf6ef; border-color:#37e663; }
+.s21{ background:#f7eaf8; border-color:#d32bc5; }
+.s22{ background:#fef9ec; border-color:#d3a12b; }
+.s23{ background:#E0E0E0; border-color:#282828; }
+.s24{ background:#dfdafd; border-color:#9856fa; }
+.s25m{ background:#F9FFFF; border-color:#3b5350; }
+
+.s a:hover{ background-color:#d7dbf4; }
+.s23:hover,
+.s24:hover,
+.s25m:hover{ background-color:#b1f4f3; }
+
+nav img{
+    width: auto;
+    height: 250px;
+    border-radius: 25px;
+}
+
+/* ---------------- FOOTER ---------------- */
+.footer {
+    background-color: #000000;
+    padding: 30px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #8ea8cb;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.footer-socials{
+    display: flex;
+    gap: 20px;
+}
+
+.footer-socials img{
+    height: 60px;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+.footer-socials img:hover{ transform: scale(1.15); }
+
+.footer-legal a{
+    text-decoration: none;
+    color: #c0c7e8;
+    font-size: 18px;
+}
+
+.footer-legal a:hover{ text-decoration: underline; }
+
+.reservat{ color:#c0c7e8; }
+
+/* ------------------------------------------------------- */
+/* ---------------- RESPONSIVE DESIGN --------------------- */
+/* ------------------------------------------------------- */
+
+/* PC (min 993px) */
+@media (min-width: 993px) {
+    .hero {
+        height: calc(100vh - 90px);
+        margin-top: 90px;
+    }
+}
+
+/* ------------- Tablets (max-width: 992px) ------------- */
+@media (max-width: 992px){
+
+    header {
+        height: 75px;
+        padding: 0 15px;
+    }
+
+    .logo img{
+        height: 58px;
+    }
+
+    .s{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .s a{
+        width: 45%;
+        padding: 40px 20px;
+    }
+
+    nav img{
+        height: 200px;
+    }
+
+    h1{
+        margin-left: 50px;
+        font-size: 35px;
+    }
+
+    .s25{
+        margin-left: 50px;
+        font-size: 35px;
+        padding: 10px 20px;
+    }
+}
+
+/* ------------- Móviles (max-width: 600px) ------------- */
+@media (max-width: 600px){
+
+    body {
+        padding-top: 0;
+    }
+
+    header{
+        position: static;
+        height: auto;
+        flex-direction: column;
+        padding: 10px 15px;
+        gap: 8px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    .nombre-empresa {
+        font-size: clamp(18px, 5vw, 26px);
+    }
+
+    .nav-menu {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-menu .link {
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+
+    .hero{
+        padding-top: 50px;
+        height: auto;
+        padding-bottom: 50px;
+        text-align: center;
+    }
+
+    h1{
+        margin-left: 0;
+        font-size: 30px;
+    }
+
+    .s25{
+        margin-left: 0;
+        font-size: 30px;
+    }
+
+    .s{
+        flex-direction: column;
+        margin: 0 20px;
+    }
+
+    .s a{
+        width: 100%;
+        padding: 30px;
+        font-size: 28px;
+    }
+
+    nav img{
+        height: 180px;
+    }
+
+    .gama-titulo,
+    .gama-titulo2{
+        font-size: 28px;
+    }
+
+    .footer{
+        flex-direction: column;
+        text-align: center;
+    }
+
+}

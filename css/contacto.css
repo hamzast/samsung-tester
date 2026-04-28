@@ -1,0 +1,381 @@
+/* =========================================
+  1. ESTILOS BASE Y TIPOGRAFÍA
+  ========================================= */
+
+* {
+    box-sizing: border-box; /* Fundamental para evitar desbordes en los inputs y divs */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-image: url('../imatges/fonsgala.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding-top: 90px; /* Unifiqué los paddings redundantes que tenías */
+    line-height: 1.6;
+    color: #bc96c4;
+}
+
+h1, h2, h3 {
+    color: #9c8fd6;
+    font-weight: 500;
+}
+
+/* =========================================
+  2. HEADER Y NAVEGACIÓN
+  ========================================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e1ebff;
+    padding: 0 30px;
+    border-bottom: 2px solid rgb(142, 168, 203);
+    z-index: 999;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 70px;
+}
+
+.nombre-empresa {
+    font-size: clamp(24px, 3vw, 45px); /* Fuente fluida */
+    color: #5b75dd;
+    margin: 0;
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Reemplaza los margins rígidos */
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
+
+nav .link {
+    padding: clamp(8px, 1vw, 15px) clamp(15px, 3vw, 40px);
+    background-color: #a8b0ff;
+    border-radius: 15px;
+    font-size: clamp(14px, 1.5vw, 18px);
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+nav .link:hover {
+    background-color: #7b87e8;
+    color: white;
+}
+
+/* =========================================
+  3. ESTRUCTURA PRINCIPAL
+  ========================================= */
+
+.main-content {
+    max-width: 800px;
+    margin: 50px auto; /* Centrado automático sin redundancias */
+    padding: 0 20px;
+}
+
+.main-content h1 {
+    font-size: clamp(28px, 4vw, 38px);
+    margin-bottom: 40px;
+    border-bottom: 2px solid #5b75dd;
+    padding-bottom: 15px;
+}
+
+/* =========================================
+  4. FORMULARIO DE CONTACTO
+  ========================================= */
+
+.contact-box {
+    background-color: #2d2430;
+    padding: clamp(20px, 4vw, 40px); /* Padding que se adapta en móviles */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #b9b1df;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c0c7e8;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: #c2c9e4;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background-color: #a8b0ff;
+    color: black;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #5b75dd;
+    color: white;
+}
+
+/* =========================================
+  5. CHECKBOX DE PRIVACIDAD PERSONALIZADO
+  ========================================= */
+
+.privacy-consent {
+    margin: 20px 0;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+    gap: 12px;
+}
+
+/* Ocultar input original */
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Cajita personalizada */
+.checkmark {
+    height: 22px;
+    width: 22px;
+    background-color: #fff;
+    border: 2px solid #b4bee9;
+    border-radius: 6px;
+    position: relative;
+    transition: all 0.2s ease-in-out;
+    flex-shrink: 0;
+}
+
+/* Estado marcado */
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: #91a3e7;
+}
+
+/* El Tick (Marca) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Texto del label */
+.label-text {
+    color: #d6beec;
+}
+
+.label-text a {
+    color: #14dfa2;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.label-text a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+  6. INFO BOX (EMPRESA)
+  ========================================= */
+
+.info-box {
+    background-color: #f8f0fa;
+    padding: clamp(20px, 4vw, 30px);
+    border-radius: 12px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.info-box p {
+    font-size: 17px;
+    margin-bottom: 10px;
+    color: #3b306b; /* Contraste mejorado */
+}
+
+.info-box strong {
+    color: #3b306b;
+}
+
+/* =========================================
+  7. FOOTER
+  ========================================= */
+
+.footer {
+    padding: 30px 20px;
+    display: flex;
+    flex-wrap: wrap; /* Evita que los elementos se aplasten */
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #8ea8cb;
+    margin-top: 40px;
+    background-color: #000000;
+    color: white;
+    gap: 20px; /* Reemplaza los márgenes fijos internos */
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-socials img {
+    height: 60px;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.footer-socials img:hover {
+    transform: scale(1.15);
+}
+
+.footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-legal a {
+    text-decoration: none;
+    color: #c0c7e8;
+    font-size: 18px;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+.reservat {
+    color: #c0c7e8;
+}
+
+/* =========================================
+  8. RESPONSIVE (MEDIA QUERIES)
+  ========================================= */
+
+/* Tabletas (max-width: 992px) */
+@media (max-width: 992px) {
+    header {
+        height: 75px;
+        padding: 0 15px;
+    }
+
+    .logo img {
+        height: 58px;
+    }
+}
+
+/* Móviles (max-width: 600px) */
+@media (max-width: 600px) {
+    body {
+        padding-top: 0;
+    }
+
+    header {
+        position: static;
+        flex-direction: column;
+        height: auto;
+        padding: 10px 15px;
+        gap: 15px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav .link {
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+
+    .main-content {
+        margin: 20px auto;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .reservat {
+        order: 1; /* Esto asegura que el texto de derechos quede siempre al fondo del footer en móvil */
+    }
+}

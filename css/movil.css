@@ -1,0 +1,290 @@
+/* ---------------- GLOBAL ---------------- */
+* {
+    box-sizing: border-box; /* Fundamental para evitar desbordes */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f3f8fa;
+    margin: 0;
+    padding-top: 90px;
+}
+
+/* ---------------- HEADER ---------------- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e1ebff;
+    padding: 0 30px;
+    border-bottom: 2px solid rgb(142, 168, 203);
+    z-index: 999;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 70px;
+}
+
+.nombre-empresa {
+    font-size: clamp(24px, 3vw, 45px); /* Fuente fluida */
+    color: #5b75dd;
+    white-space: nowrap;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Reemplaza los margins rígidos */
+}
+
+nav .link {
+    padding: clamp(8px, 1vw, 15px) clamp(15px, 3vw, 40px);
+    background-color: #a8b0ff;
+    border-radius: 15px;
+    text-decoration: none;
+    color: black;
+    font-size: clamp(14px, 1.5vw, 18px);
+    white-space: nowrap;
+    transition: background-color 0.2s;
+}
+
+nav .link:hover {
+    background-color: #7b87e8;
+    color: white;
+}
+
+/* ---------------- TIPOGRAFÍA E IMÁGENES ---------------- */
+h1 {
+    color: #3b306b; 
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 500; 
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h2 {
+    color: #2f90a8; 
+    font-size: clamp(32px, 4vw, 54px);
+    font-weight: 500; 
+    margin: 30px 0 20px 0;
+}
+
+/* ---------------- MAIN CONTENT (.orden) ---------------- */
+.orden {
+    display: flex;
+    flex-direction: row; 
+    align-items: flex-start; 
+    gap: 40px; 
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenedor en lugar de usar margin-left rígido */
+    padding: 0 20px;
+}
+
+.orden > img {
+    display: block;
+    width: 100%;
+    max-width: 450px; /* Controla la imagen sin romper el flex */
+    height: auto;
+    object-fit: cover;
+}
+
+/* ---------------- GRID DE ESPECIFICACIONES ---------------- */
+.specs-container {
+    flex: 1; /* Toma el espacio restante */
+}
+
+.Especificaciones {
+    margin: 0 0 30px 0;
+}
+
+.specs-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas equitativas */
+    gap: 10px; /* Unifica el gap */
+}
+
+.spec-item {
+    padding: 15px 20px;
+    background-color: #e2ecf8; 
+    border-bottom: 1px solid #e0e6f0;
+    border-right: 1px solid #e0e6f0; 
+    width: 100%; /* Elimina el 550px para que fluya en el grid */
+}
+
+.spec-item:nth-child(even) {
+    border-right: none;
+}
+
+.specs-grid > div:nth-last-child(-n + 2) {
+    border-bottom: none;
+}
+
+.label {
+    color: #3b306b;
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 5px; 
+}
+
+.value {
+    color: #000000; 
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* ---------------- FOOTER ---------------- */
+.footer {
+    background-color: #000000;
+    padding: 30px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #8ea8cb;
+    margin-top: 40px;
+    gap: 20px;
+}
+
+.footer-socials {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-socials img,
+.insta img {
+    height: 60px;
+    border-radius: 10px;
+    margin: 0;
+    transition: transform 0.2s;
+}
+
+.insta img {
+    height: 40px; /* Mantiene tu tamaño original para insta */
+}
+
+.footer-socials img:hover,
+.insta img:hover {
+    transform: scale(1.15);
+}
+
+.footer-legal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-legal a {
+    text-decoration: none;
+    color: #c0c7e8;
+    font-size: 18px;
+}
+
+.footer-legal a:hover {
+    text-decoration: underline;
+}
+
+.reservat {
+    color: #c0c7e8;
+}
+
+/* ------------------------------------------------------- */
+/* ---------------- RESPONSIVE DESIGN --------------------- */
+/* ------------------------------------------------------- */
+
+/* ------------- Tablets (max-width: 992px) ------------- */
+@media (max-width: 992px) {
+    header {
+        height: 75px;
+        padding: 0 15px;
+    }
+
+    .logo img {
+        height: 58px;
+    }
+
+    .orden {
+        flex-direction: column; /* Apila imagen arriba, specs abajo */
+        align-items: center;
+    }
+
+    .orden > img {
+        margin: 0 auto;
+    }
+
+    h2 {
+        text-align: center;
+    }
+}
+
+/* ------------- Móviles (max-width: 600px) ------------- */
+@media (max-width: 600px) {
+    body {
+        padding-top: 0;
+    }
+
+    header {
+        position: static; /* Libera el header en móvil */
+        height: auto;
+        flex-direction: column;
+        padding: 10px 15px;
+        gap: 15px;
+    }
+
+    .logo img {
+        height: 50px;
+    }
+
+    nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    nav .link {
+        padding: 8px 18px;
+        font-size: 14px;
+    }
+
+    .specs-grid {
+        grid-template-columns: 1fr; /* 1 sola columna de especificaciones */
+        gap: 0;
+    }
+
+    .spec-item {
+        border-right: none !important;
+        border-bottom: 1px solid #e0e6f0;
+        padding: 12px 15px;
+    }
+
+    .specs-grid > div:last-child {
+        border-bottom: none;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 15px;
+    }
+}

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acerca de Nosotros - Samsung Tester</title>
+    
+    <style>
+        /* ----------------------------------- */
+        /* --- ESTILOS BASE Y ESTRUCTURA --- */
+        /* ----------------------------------- */
+
+
+
+       
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f3f8fa;
+            padding: 0; 
+            margin: 0;
+            padding-top: 90px; /* Espacio para el header fijo */
+            line-height: 1.6;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #3b306b;
+            font-weight: 500;
+        }
+
+        /* Contenedor principal del contenido (centrado y con límites) */
+        .main-content {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .main-content h1 {
+            font-size: 38px;
+            text-align: center;
+            margin-bottom: 40px;
+            border-bottom: 2px solid #5b75dd;
+            padding-bottom: 15px;
+        }
+
+        .main-content h3 {
+            font-size: 24px;
+            margin-top: 30px;
+            color: #2f90a8;
+        }
+
+        .section-text p {
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+        
+        /* Estilo para las listas de bullets */
+        .section-text ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .section-text ul li {
+            background-color: #e2ecf8;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #5b75dd;
+        }
+        
+        .section-text ul li strong {
+            color: #3b306b;
+            font-weight: 700;
+        }
+        
+        .cta-box {
+            background-color: #d8e6f7;
+            border: 1px solid #c0c7e8;
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+
+        /* --- HEADER (Reutilizado) --- */
+        header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 90px;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e1ebff;
+            padding-right: 20px;
+            padding-left: 20px;
+            border-bottom: 2px solid rgb(142, 168, 203);
+            z-index: 1000;
+            display : flex
+        }
+        .nombre-empresa{
+            color: #5b75dd;
+            margin-left: 20px;
+            font-size: 45px;
+            display : flex;
+        }
+        .logo{
+            align-items: center;
+            display : flex
+        }
+        .logo img{
+            height: 75px;
+            margin-right: 10px;
+        }
+        nav .link{
+            padding: 10px;
+            padding-right: 30px;
+            padding-left: 30px;
+            margin-left: 20px;
+            background-color:#a8b0ff ;
+            border-radius: 15px;
+        }
+        nav{
+            margin-right: 50px;
+        }
+        nav a{
+            text-decoration: none;
+            color: black;   
+        }
+
+        /* --- FOOTER (Reutilizado) --- */
+        .footer {
+            padding: 30px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 2px solid #8ea8cb;
+            margin-top: 40px;
+            background-color: #000000;
+            color: white;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-socials img {
+            width: auto;
+            height: 40px;
+            border-radius: 10px;
+            transition: transform 0.2s;
+            margin-right: 0;
+        }
+
+        .footer-legal a {
+            text-decoration: none;
+            color: #c0c7e8;
+            font-size: 18px;
+            margin-right: 50px;
+        }
+
+        .reservat{
+            color: #c0c7e8;
+        }
+        
+        /* ------------------------------------------- */
+        /* --- RESPONSIVE (MEDIA QUERIES) --- */
+        /* ------------------------------------------- */
+
+        /* Móviles (hasta 600px) */
+        @media (max-width: 600px) {
+            .main-content {
+                margin: 20px auto;
+                padding: 0 10px;
+            }
+            .main-content h1 {
+                font-size: 30px;
+                margin-bottom: 20px;
+            }
+            .main-content h3 {
+                font-size: 20px;
+            }
+            .section-text p, .section-text ul li {
+                font-size: 15px;
+            }
+            
+            /* Header Móvil */
+            header { position: static; flex-direction: column; height: auto; padding: 10px 10px; }
+            .nombre-empresa { font-size: 28px; margin-left: 0; }
+            nav { width: 100%; justify-content: space-around; margin-top: 10px; margin-right: 0; }
+            nav .link { padding: 5px 10px; font-size: 12px; margin-left: 0; }
+            body { padding-top: 0; }
+
+            /* Footer Móvil */
+            .footer { flex-direction: column; gap: 10px; padding: 20px 10px; text-align: center; }
+            .footer-legal a { display: block; margin-right: 0; font-size: 14px; }
+            .reservat { order: 1; }
+        }
+
+        /* Tabletas (601px a 1024px) */
+        @media (min-width: 601px) and (max-width: 1024px) {
+             .main-content { max-width: 90%; }
+             /* Ajustes de header para tabletas */
+             header { height: 70px; }
+             .logo img { height: 50px; margin-right: 20px; }
+             .nombre-empresa { font-size: 35px; }
+             nav .link { padding: 8px 15px; margin-left: 10px; }
+        }
+
+    </style>
+</head>
+<body>
+
+<header id="header">
+    <div class="logo">
+        <img src="imatges/logo.png" alt="Logo Samsung Tester"> 
+        <h2 class="nombre-empresa">Samsung tester</h2>
+    </div>
+
+     <nav class="nav-menu">
+        <a href="index.html" class="link nav">Menu</a>
+        <a href="nosotros.html" class="link nav">nosotros</a>
+        <a href="contacto.html" class="link nav">contacto</a>
+    </nav>
+</header>
+
+<div class="main-content">
+    <div class="sec1">
+    <h1>🚀 Acerca de Samsung Tester: Tu Fuente Definitiva de Especificaciones Móviles</h1>
+
+    <div class="section-text">
+        <p>Somos <strong>Samsung Tester</strong>, y nuestra misión es simple: proporcionar la información más <strong>precisa, detallada y comprensible</strong> sobre las características técnicas de los <em>smartphones</em> Samsung.</p>
+        
+        <p>En el vertiginoso mundo de la tecnología móvil, comparar modelos puede ser abrumador. Nuestra página nació de la necesidad de ir más allá del <em>marketing</em> y ofrecer <strong>datos concretos</strong> sobre lo que realmente importa: la CPU, la RAM, la tecnología de la pantalla, los megapíxeles y la capacidad de la batería.</p>
+    </div>
+    </div>
+
+    <div class="sec2">
+    <h3>🔍 ¿Qué Hacemos?</h3>
+    
+    <div class="section-text">
+        <p>Analizamos meticulosamente cada dispositivo de la serie Samsung Galaxy S, desde los modelos históricos como el Galaxy S20 hasta los más recientes como el Galaxy S24, basándonos en los datos más fiables del mercado.</p>
+        
+        <ul>
+            <li>
+                <strong>Detalle Granular:</strong> Presentamos especificaciones clave como la densidad de píxeles (ppi), la frecuencia del procesador (GHz) y los detalles de la apertura focal de la cámara, organizados en un formato de cuadrícula fácil de leer.
+            </li>
+            <li>
+                <strong>Comparación Sencilla:</strong> Facilitamos la comparación directa entre generaciones (por ejemplo, ver la evolución de la batería del S20 al S24), ayudándote a tomar decisiones informadas sobre tu próxima compra o *upgrade*.
+            </li>
+            <li>
+                <strong>Enfoque en Hardware:</strong> Nos especializamos en desglosar el corazón del dispositivo: el hardware. Esto incluye la arquitectura del procesador (Exynos vs. Snapdragon), la memoria interna (ROM) y las tecnologías de pantalla (Dynamic AMOLED).
+            </li>
+        </ul>
+    </div>
+    </div>
+
+
+
+    <div class="sec3">
+    <div class="cta-box">
+        <h3>🎯 Nuestro Compromiso</h3>
+        <p>Estamos comprometidos a ser la herramienta de referencia para entusiastas, compradores informados y profesionales de la tecnología que buscan la <strong>verdad técnica</strong> detrás de cada modelo.</p>
+        <p>Si necesitas saber exactamente cuánto mejoró el Exynos 2400 respecto al 2100, o si el cambio de resolución de la pantalla del S20 al S21 vale la pena para ti, estás en el lugar correcto.</p>
+        <p><strong>¡Somos tus *testers* de confianza. Bienvenido!</strong></p>
+    </div>
+</div>
+</div>
+
+<footer class="footer">
+    <div class="footer-socials">
+        <a href="https://www.instagram.com/samsungespana/"  target="_blank"><img src="imatges/instagram.png" alt="Facebook"></a>
+        <a href="https://www.youtube.com/channel/UCdYayZ3AJjY8UzWgohOOrwA" target="_blank"><img src="imatges/youtube.jpg" alt="Instagram"></a>
+        <a href="https://x.com/SamsungEspana" class="insta" target="_blank"><img src="imatges/x.jpg" alt="Twitter"></a>
+    </div>
+    <div class="reservat"><h4>Samsungtester.com © 2005 - 2025 Tots els drets reservats</h4></div>
+    <div class="footer-legal">
+          <a href="privacidad.html">Política de privacidad</a>
+    </div>
+</footer>
+
+</body>
+</html>
