@@ -1,6 +1,5 @@
-/* ---------------- GLOBAL ---------------- */
 * {
-    box-sizing: border-box; /* Fundamental para evitar desbordes */
+    box-sizing: border-box;
 }
 
 body {
@@ -10,7 +9,6 @@ body {
     padding-top: 90px;
 }
 
-/* ---------------- HEADER ---------------- */
 header {
     position: fixed;
     top: 0;
@@ -38,7 +36,7 @@ header {
 }
 
 .nombre-empresa {
-    font-size: clamp(24px, 3vw, 45px); /* Fuente fluida */
+    font-size: clamp(24px, 3vw, 45px);
     color: #5b75dd;
     white-space: nowrap;
     margin: 0;
@@ -47,7 +45,7 @@ header {
 nav {
     display: flex;
     align-items: center;
-    gap: 15px; /* Reemplaza los margins rígidos */
+    gap: 15px;
 }
 
 nav .link {
@@ -66,7 +64,6 @@ nav .link:hover {
     color: white;
 }
 
-/* ---------------- TIPOGRAFÍA E IMÁGENES ---------------- */
 h1 {
     color: #3b306b; 
     font-size: clamp(20px, 3vw, 28px);
@@ -85,28 +82,26 @@ h2 {
     margin: 30px 0 20px 0;
 }
 
-/* ---------------- MAIN CONTENT (.orden) ---------------- */
 .orden {
     display: flex;
     flex-direction: row; 
     align-items: flex-start; 
     gap: 40px; 
     max-width: 1200px;
-    margin: 0 auto; /* Centra el contenedor en lugar de usar margin-left rígido */
+    margin: 0 auto;
     padding: 0 20px;
 }
 
 .orden > img {
     display: block;
     width: 100%;
-    max-width: 450px; /* Controla la imagen sin romper el flex */
+    max-width: 450px;
     height: auto;
     object-fit: cover;
 }
 
-/* ---------------- GRID DE ESPECIFICACIONES ---------------- */
 .specs-container {
-    flex: 1; /* Toma el espacio restante */
+    flex: 1;
 }
 
 .Especificaciones {
@@ -115,8 +110,8 @@ h2 {
 
 .specs-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas equitativas */
-    gap: 10px; /* Unifica el gap */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
 }
 
 .spec-item {
@@ -124,7 +119,7 @@ h2 {
     background-color: #e2ecf8; 
     border-bottom: 1px solid #e0e6f0;
     border-right: 1px solid #e0e6f0; 
-    width: 100%; /* Elimina el 550px para que fluya en el grid */
+    width: 100%;
 }
 
 .spec-item:nth-child(even) {
@@ -149,7 +144,6 @@ h2 {
     line-height: 1.2;
 }
 
-/* ---------------- FOOTER ---------------- */
 .footer {
     background-color: #000000;
     padding: 30px 20px;
@@ -177,7 +171,7 @@ h2 {
 }
 
 .insta img {
-    height: 40px; /* Mantiene tu tamaño original para insta */
+    height: 40px;
 }
 
 .footer-socials img:hover,
@@ -205,11 +199,6 @@ h2 {
     color: #c0c7e8;
 }
 
-/* ------------------------------------------------------- */
-/* ---------------- RESPONSIVE DESIGN --------------------- */
-/* ------------------------------------------------------- */
-
-/* ------------- Tablets (max-width: 992px) ------------- */
 @media (max-width: 992px) {
     header {
         height: 75px;
@@ -221,7 +210,7 @@ h2 {
     }
 
     .orden {
-        flex-direction: column; /* Apila imagen arriba, specs abajo */
+        flex-direction: column;
         align-items: center;
     }
 
@@ -234,14 +223,13 @@ h2 {
     }
 }
 
-/* ------------- Móviles (max-width: 600px) ------------- */
 @media (max-width: 600px) {
     body {
         padding-top: 0;
     }
 
     header {
-        position: static; /* Libera el header en móvil */
+        position: static;
         height: auto;
         flex-direction: column;
         padding: 10px 15px;
@@ -264,7 +252,7 @@ h2 {
     }
 
     .specs-grid {
-        grid-template-columns: 1fr; /* 1 sola columna de especificaciones */
+        grid-template-columns: 1fr;
         gap: 0;
     }
 

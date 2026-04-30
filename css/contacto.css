@@ -1,9 +1,6 @@
-/* =========================================
-  1. ESTILOS BASE Y TIPOGRAFÍA
-  ========================================= */
 
 * {
-    box-sizing: border-box; /* Fundamental para evitar desbordes en los inputs y divs */
+    box-sizing: border-box; 
 }
 
 body {
@@ -13,7 +10,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     margin: 0;
-    padding-top: 90px; /* Unifiqué los paddings redundantes que tenías */
+    padding-top: 90px; 
     line-height: 1.6;
     color: #bc96c4;
 }
@@ -23,9 +20,7 @@ h1, h2, h3 {
     font-weight: 500;
 }
 
-/* =========================================
-  2. HEADER Y NAVEGACIÓN
-  ========================================= */
+
 
 header {
     position: fixed;
@@ -102,13 +97,10 @@ nav .link:hover {
     padding-bottom: 15px;
 }
 
-/* =========================================
-  4. FORMULARIO DE CONTACTO
-  ========================================= */
 
 .contact-box {
     background-color: #2d2430;
-    padding: clamp(20px, 4vw, 40px); /* Padding que se adapta en móviles */
+    padding: clamp(20px, 4vw, 40px); 
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
@@ -164,9 +156,6 @@ nav .link:hover {
     color: white;
 }
 
-/* =========================================
-  5. CHECKBOX DE PRIVACIDAD PERSONALIZADO
-  ========================================= */
 
 .privacy-consent {
     margin: 20px 0;
@@ -182,7 +171,6 @@ nav .link:hover {
     gap: 12px;
 }
 
-/* Ocultar input original */
 .custom-checkbox input {
     position: absolute;
     opacity: 0;
@@ -191,7 +179,6 @@ nav .link:hover {
     width: 0;
 }
 
-/* Cajita personalizada */
 .checkmark {
     height: 22px;
     width: 22px;
@@ -203,12 +190,10 @@ nav .link:hover {
     flex-shrink: 0;
 }
 
-/* Estado marcado */
 .custom-checkbox input:checked ~ .checkmark {
     background-color: #91a3e7;
 }
 
-/* El Tick (Marca) */
 .checkmark:after {
     content: "";
     position: absolute;
@@ -226,7 +211,6 @@ nav .link:hover {
     display: block;
 }
 
-/* Texto del label */
 .label-text {
     color: #d6beec;
 }
@@ -241,9 +225,6 @@ nav .link:hover {
     text-decoration: underline;
 }
 
-/* =========================================
-  6. INFO BOX (EMPRESA)
-  ========================================= */
 
 .info-box {
     background-color: #f8f0fa;
@@ -256,28 +237,25 @@ nav .link:hover {
 .info-box p {
     font-size: 17px;
     margin-bottom: 10px;
-    color: #3b306b; /* Contraste mejorado */
+    color: #3b306b; 
 }
 
 .info-box strong {
     color: #3b306b;
 }
 
-/* =========================================
-  7. FOOTER
-  ========================================= */
 
 .footer {
     padding: 30px 20px;
     display: flex;
-    flex-wrap: wrap; /* Evita que los elementos se aplasten */
+    flex-wrap: wrap; 
     justify-content: space-between;
     align-items: center;
     border-top: 2px solid #8ea8cb;
     margin-top: 40px;
     background-color: #000000;
     color: white;
-    gap: 20px; /* Reemplaza los márgenes fijos internos */
+    gap: 20px; 
 }
 
 .footer-socials {
@@ -316,11 +294,7 @@ nav .link:hover {
     color: #c0c7e8;
 }
 
-/* =========================================
-  8. RESPONSIVE (MEDIA QUERIES)
-  ========================================= */
 
-/* Tabletas (max-width: 992px) */
 @media (max-width: 992px) {
     header {
         height: 75px;
@@ -332,7 +306,7 @@ nav .link:hover {
     }
 }
 
-/* Móviles (max-width: 600px) */
+
 @media (max-width: 600px) {
     body {
         padding-top: 0;
@@ -376,6 +350,6 @@ nav .link:hover {
     }
 
     .reservat {
-        order: 1; /* Esto asegura que el texto de derechos quede siempre al fondo del footer en móvil */
+        order: 1; 
     }
 }
